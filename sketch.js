@@ -1,13 +1,16 @@
 let bird;
 let obs = [];
 function setup() {
-    createCanvas(600, windowHeight-100);
+    createCanvas(windowWidth, windowHeight-100);
     let r = random(255);
     let g = random(255);
     let b = random(255);
     background(r,g,b)
     bird = new Bird();
     obs.push(new Obstacle());
+    // Align text center both horizontally and vertically.
+  textAlign(CENTER, CENTER);
+  textSize(50);
 }
 function draw() {
     background(0)
@@ -23,6 +26,7 @@ function draw() {
     if (frameCount % 70 == 0) {
         console.log(frameCount)
         document.getElementById("point").innerText =frameCount;
+        text(frameCount);
             obs.push(new Obstacle());
     }
     bird.show();
