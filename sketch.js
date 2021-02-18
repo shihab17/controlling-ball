@@ -13,7 +13,7 @@ function setup() {
   textSize(50);
 }
 function draw() {
-    background(0)
+    background(255)
     bird.update();
     for (let i = 0; i < obs.length; i++) {
         if (obs[i].collides(bird)) {
