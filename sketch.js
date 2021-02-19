@@ -17,9 +17,7 @@ function setup() {
 function draw() {
     // background(65, 105, 225)
     background(bgColor);
-    textSize(48);
-    textAlign(CENTER);
-    text(frameCount, 50, 50);
+    
     bird.update();
     for (let i = 0; i < obs.length; i++) {
         if (obs[i].collides(bird)) {
@@ -37,6 +35,9 @@ function draw() {
         obs.push(new Obstacle());
     }
     bird.show();
+    textSize(48);
+    textAlign(CENTER);
+    text(frameCount, 50, 50);
 }
 function mousePressed() {
     bird.up();
