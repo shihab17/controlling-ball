@@ -1,7 +1,7 @@
 let bird;
 let obs = [];
 function setup() {
-    createCanvas(windowWidth, windowHeight - 200);
+    createCanvas(windowWidth, windowHeight - 100);
     let r = random(255);
     let g = random(255);
     let b = random(255);
@@ -10,9 +10,9 @@ function setup() {
     bird = new Bird();
     obs.push(new Obstacle());
     
-    button = createButton('reload');
-    button.position(100, 20);
-    button.mousePressed(reload);
+    // button = createButton('reload');
+    // button.position(100, 20);
+    // button.mousePressed(reload);
 }
 function draw() {
     // background(65, 105, 225)
@@ -29,15 +29,18 @@ function draw() {
     }
     if (frameCount % 70 == 0) {
         
-        console.log(frameCount)
-        document.getElementById("point").innerText = frameCount;
+        // document.getElementById("point").innerText = frameCount;
         text(frameCount);
         obs.push(new Obstacle());
     }
     bird.show();
+    fill(0,0,255);
     textSize(48);
+    stroke(255)
+    strokeWeight(5);
     textAlign(CENTER);
-    text(frameCount, 50, 50);
+    text(frameCount, 150, 50);
+    
 }
 function mousePressed() {
     bird.up();
