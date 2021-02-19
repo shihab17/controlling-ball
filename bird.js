@@ -2,12 +2,12 @@ class Bird {
     constructor(){
         this.x = width/3;
         this.y = height/2;
-        this.r = 25;
+        this.r = 15;
         this.gravity = 0.3;
         this.velocity = 0;
     }
     show(){
-        fill(246, 132, 109);
+        fill(255,255,0);
         ellipse(this.x, this.y, this.r*2);
     }
     update(){
@@ -23,6 +23,6 @@ class Bird {
         }
     }
     up(){
-        this.velocity -=10;
+        this.velocity -=8;
     }
 }
