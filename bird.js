@@ -16,6 +16,7 @@ class Bird {
     update() {
         this.velocity += this.gravity;
         this.y += this.velocity;
+		console.log(this.y);
         if (this.y > height - this.r) {
             this.y = height - this.r;
             this.velocity = 0;
@@ -28,7 +29,8 @@ class Bird {
     up() {
         this.velocity -= 5;
     }
-    btnup(){
+    btnup() {
         this.velocity -= 1;
     }
+    
 }

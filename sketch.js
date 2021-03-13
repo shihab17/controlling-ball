@@ -11,8 +11,11 @@ function setup() {
     bird = new Bird();
     obs.push(new Obstacle());
     button = createButton('UP');
+    // buttonStop = createButton('Stop');
     button.position((windowWidth/1.5), (windowHeight/1.3));
+    // buttonStop.position((windowWidth/1.5)-50, (windowHeight/1.3)+20);
     button.mousePressed(changeBG);
+    button.mousePressed(stop(true));
     button.style('font-size', '24px');
     button.style('padding','7px');
     button.style('border-radius','10px')
@@ -24,7 +27,9 @@ function draw() {
 
     bird.update();
     for (let i = 0; i < obs.length; i++) {
+	
         if (obs[i].collides(bird)) {
+			console.log(obs[i]);
             noLoop();
         }
         obs[i].update();
@@ -54,4 +59,6 @@ function reload() {
 }
 function changeBG() {
     bird.btnup();
-  }
+}
+
+  
